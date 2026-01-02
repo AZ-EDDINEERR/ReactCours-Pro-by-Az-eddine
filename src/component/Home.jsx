@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import CodingAnimation from '../animation/Coding.json';
-import Exercice from "./QCM";
 
 export default function Home() {
     return (
