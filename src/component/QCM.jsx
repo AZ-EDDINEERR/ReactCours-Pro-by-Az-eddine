@@ -4,7 +4,7 @@ import Data from "../Data/exercice.json";
 export default function Exercice() {
   const data = Data;
   const [listeId, setListeId] = useState([]);
-  const [time, setTime] = useState(600); // 10 minutes
+  const [time, setTime] = useState(400); // 10 minutes
   const [isFinished, setIsFinished] = useState(false); // nouvel état pour valider examen
 
   // Timer
@@ -33,7 +33,7 @@ export default function Exercice() {
   }).length;
 
   // Bouton Valider
-  const handleFinish = () => setIsFinished(true);
+  const handleFinish = () => {setIsFinished(true); setTime(0);};
 
   return (
     <div className="container mt-5">
