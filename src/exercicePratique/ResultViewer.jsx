@@ -1,5 +1,4 @@
 // src/components/ResultViewer.js
-import React from 'react';
 
 const ResultViewer = ({ code }) => {
   // Le HTML qui sera injecté dans l'iframe.

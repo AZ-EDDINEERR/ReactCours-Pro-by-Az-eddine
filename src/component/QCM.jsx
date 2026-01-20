@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Data from "../Data/exercice.json";
 
 export default function Exercice() {

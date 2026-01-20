@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ExerciceInteractif from "./ExerciceInteractif";
 import DataEX from "../Data/exercicePratique.json";
 

@@ -6,7 +6,7 @@ import Home from "./component/Home";
 import store from "./store";
 import Cours from "./component/Courses";
 import CoursDetail from "./component/CoursesDetail";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Footer from "./component/footer";
 import Contact from "./component/Contact";
 import Header from "./component/header";
@@ -17,7 +17,7 @@ import CoursReact from "./exercicePratique/Exercice";
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<> <Header /><Home /><Footer /></>} />
           <Route path="/cours" element={<> <Header /><Cours /><Footer /></>} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/contact" element={<> <Header /><Contact /><Footer /></>} />
           <Route path="/Profil" element={<> <Header /><UserProfile /><Footer /></>} />
         </Routes>
-      </Router>
+      </HashRouter>
     </Provider>
   );
 }

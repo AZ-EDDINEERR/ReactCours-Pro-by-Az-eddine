@@ -1,5 +1,5 @@
 // src/components/ExerciceInteractif.jsx
-import React, { useState, useRef, useEffect } from "react";
+import  { useState, useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import ResultViewer from "./ResultViewer";
 
