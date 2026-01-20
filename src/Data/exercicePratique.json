@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "titre": "Hello React",
+    "description": "Créer un composant fonctionnel qui affiche 'Hello React'.",
+    "codeInitial": "function App() {\n  return (\n    <div>\n      {/* Écrire Hello React ici */}\n    </div>\n  );\n}\n\nexport default App;",
+    "correction": "function App() {\n  return (\n    <div>\n      Hello React\n    </div>\n  );\n}\n\nexport default App;"
+  },
+  {
+    "id": 2,
+    "titre": "JSX et balises",
+    "description": "Afficher un titre h1 'Bienvenue' et un paragraphe 'React est fun'.",
+    "codeInitial": "function App() {\n  return (\n    <div>\n      {/* Ajouter titre et paragraphe */}\n    </div>\n  );\n}\n\nexport default App;",
+    "correction": "function App() {\n  return (\n    <div>\n      <h1>Bienvenue</h1>\n      <p>React est fun</p>\n    </div>\n  );\n}\n\nexport default App;"
+  },
+  {
+    "id": 3,
+    "titre": "Composant enfant",
+    "description": "Créer un composant 'Salutation' qui reçoit une prop 'name' et l'affiche.",
+    "codeInitial": "function Salutation(props) {\n  return (\n    <div>\n      {/* Afficher le nom ici */}\n    </div>\n  );\n}\n\nexport default Salutation;",
+    "correction": "function Salutation(props) {\n  return (\n    <div>\n      Bonjour {props.name}\n    </div>\n  );\n}\n\nexport default Salutation;"
+  },
+  {
+    "id": 4,
+    "titre": "useState simple",
+    "description": "Créer un compteur qui s'incrémente au clic d'un bouton.",
+    "codeInitial": "import { useState } from 'react';\n\nfunction Compteur() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Compteur : {count}</p>\n      <button onClick={/* Incrémentez count */}>+</button>\n    </div>\n  );\n}\n\nexport default Compteur;",
+    "correction": "import { useState } from 'react';\n\nfunction Compteur() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Compteur : {count}</p>\n      <button onClick={() => setCount(count + 1)}>+</button>\n    </div>\n  );\n}\n\nexport default Compteur;"
+  },
+  {
+    "id": 5,
+    "titre": "useEffect simple",
+    "description": "Afficher un message dans la console au chargement du composant.",
+    "codeInitial": "import { useEffect } from 'react';\n\nfunction Logger() {\n  useEffect(() => {\n    // Ajouter console.log\n  }, []);\n\n  return <div>Vérifier la console</div>;\n}\n\nexport default Logger;",
+    "correction": "import { useEffect } from 'react';\n\nfunction Logger() {\n  useEffect(() => {\n    console.log('Composant chargé');\n  }, []);\n\n  return <div>Vérifier la console</div>;\n}\n\nexport default Logger;"
+  },
+  {
+    "id": 6,
+    "titre": "Liste avec map",
+    "description": "Afficher une liste d'éléments ['React', 'JSX', 'Hooks'] en ul/li.",
+    "codeInitial": "function Liste() {\n  const items = ['React', 'JSX', 'Hooks'];\n\n  return (\n    <ul>\n      {/* Afficher items ici */}\n    </ul>\n  );\n}\n\nexport default Liste;",
+    "correction": "function Liste() {\n  const items = ['React', 'JSX', 'Hooks'];\n\n  return (\n    <ul>\n      {items.map((item, index) => <li key={index}>{item}</li>)}\n    </ul>\n  );\n}\n\nexport default Liste;"
+  },
+  {
+    "id": 7,
+    "titre": "Input contrôlé",
+    "description": "Créer un input contrôlé qui affiche sa valeur en temps réel.",
+    "codeInitial": "import { useState } from 'react';\n\nfunction Input() {\n  const [value, setValue] = useState('');\n\n  return (\n    <div>\n      <input type='text' value={value} onChange={/* gérer changement */} />\n      <p>Valeur : {value}</p>\n    </div>\n  );\n}\n\nexport default Input;",
+    "correction": "import { useState } from 'react';\n\nfunction Input() {\n  const [value, setValue] = useState('');\n\n  return (\n    <div>\n      <input type='text' value={value} onChange={e => setValue(e.target.value)} />\n      <p>Valeur : {value}</p>\n    </div>\n  );\n}\n\nexport default Input;"
+  },
+  {
+    "id": 8,
+    "titre": "Composant avec props multiples",
+    "description": "Créer un composant 'Profil' qui reçoit 'nom' et 'age' et les affiche.",
+    "codeInitial": "function Profil(props) {\n  return (\n    <div>\n      {/* Afficher nom et age */}\n    </div>\n  );\n}\n\nexport default Profil;",
+    "correction": "function Profil(props) {\n  return (\n    <div>\n      Nom : {props.nom}, Age : {props.age}\n    </div>\n  );\n}\n\nexport default Profil;"
+  },
+  {
+    "id": 9,
+    "titre": "useRef basique",
+    "description": "Créer un input et le focus au chargement du composant avec useRef.",
+    "codeInitial": "import { useRef, useEffect } from 'react';\n\nfunction FocusInput() {\n  const inputRef = useRef(null);\n\n  useEffect(() => {\n    // Ajouter focus\n  }, []);\n\n  return <input ref={inputRef} />;\n}\n\nexport default FocusInput;",
+    "correction": "import { useRef, useEffect } from 'react';\n\nfunction FocusInput() {\n  const inputRef = useRef(null);\n\n  useEffect(() => {\n    inputRef.current.focus();\n  }, []);\n\n  return <input ref={inputRef} />;\n}\n\nexport default FocusInput;"
+  },
+  {
+    "id": 10,
+    "titre": "Toggle avec useState",
+    "description": "Créer un bouton qui affiche 'ON' ou 'OFF' au clic.",
+    "codeInitial": "import { useState } from 'react';\n\nfunction Toggle() {\n  const [on, setOn] = useState(true);\n\n  return (\n    <button onClick={/* toggle */}>\n      {/* afficher ON ou OFF */}\n    </button>\n  );\n}\n\nexport default Toggle;",
+    "correction": "import { useState } from 'react';\n\nfunction Toggle() {\n  const [on, setOn] = useState(true);\n\n  return (\n    <button onClick={() => setOn(!on)}>\n      {on ? 'ON' : 'OFF'}\n    </button>\n  );\n}\n\nexport default Toggle;"
+  },
+  {
+    "id": 11,
+    "titre": "Conditionnel simple",
+    "description": "Afficher 'Bonjour' si isLogged est true sinon 'Connectez-vous'.",
+    "codeInitial": "function Connexion({ isLogged }) {\n  return (\n    <div>\n      {/* Condition ici */}\n    </div>\n  );\n}\n\nexport default Connexion;",
+    "correction": "function Connexion({ isLogged }) {\n  return (\n    <div>\n      {isLogged ? 'Bonjour' : 'Connectez-vous'}\n    </div>\n  );\n}\n\nexport default Connexion;"
+  },
+  {
+    "id": 12,
+    "titre": "Liste filtrée",
+    "description": "Afficher uniquement les nombres pairs d'un tableau [1,2,3,4,5].",
+    "codeInitial": "function NombresPairs() {\n  const nums = [1,2,3,4,5];\n  return (\n    <ul>\n      {/* map et filter */}\n    </ul>\n  );\n}\n\nexport default NombresPairs;",
+    "correction": "function NombresPairs() {\n  const nums = [1,2,3,4,5];\n  return (\n    <ul>\n      {nums.filter(n => n%2===0).map((n, i) => <li key={i}>{n}</li>)}\n    </ul>\n  );\n}\n\nexport default NombresPairs;"
+  },
+  {
+    "id": 13,
+    "titre": "useEffect avec API",
+    "description": "Faire un fetch vers https://jsonplaceholder.typicode.com/users et afficher les noms.",
+    "codeInitial": "import { useEffect, useState } from 'react';\n\nfunction Users() {\n  const [users, setUsers] = useState([]);\n\n  useEffect(() => {\n    // fetch users\n  }, []);\n\n  return (\n    <ul>\n      {/* map users */}\n    </ul>\n  );\n}\n\nexport default Users;",
+    "correction": "import { useEffect, useState } from 'react';\n\nfunction Users() {\n  const [users, setUsers] = useState([]);\n\n  useEffect(() => {\n    fetch('https://jsonplaceholder.typicode.com/users')\n      .then(res => res.json())\n      .then(data => setUsers(data));\n  }, []);\n\n  return (\n    <ul>\n      {users.map(u => <li key={u.id}>{u.name}</li>)}\n    </ul>\n  );\n}\n\nexport default Users;"
+  },
+  {
+    "id": 14,
+    "titre": "Composant réutilisable",
+    "description": "Créer un composant Button qui reçoit prop 'label' et l'affiche.",
+    "codeInitial": "function Button(props) {\n  return (\n    <button>\n      {/* afficher label */}\n    </button>\n  );\n}\n\nexport default Button;",
+    "correction": "function Button(props) {\n  return (\n    <button>{props.label}</button>\n  );\n}\n\nexport default Button;"
+  },
+  {
+    "id": 15,
+    "titre": "useReducer simple",
+    "description": "Créer un compteur avec useReducer (increment / decrement).",
+    "codeInitial": "import { useReducer } from 'react';\n\nfunction reducer(state, action) {\n  // implémenter\n}\n\nfunction CompteurReducer() {\n  const [state, dispatch] = useReducer(reducer, {count:0});\n  return (\n    <div>\n      <p>Count: {state.count}</p>\n      {/* buttons */}\n    </div>\n  );\n}\n\nexport default CompteurReducer;",
+    "correction": "import { useReducer } from 'react';\n\nfunction reducer(state, action) {\n  switch(action.type) {\n    case 'increment': return {count: state.count+1};\n    case 'decrement': return {count: state.count-1};\n    default: return state;\n  }\n}\n\nfunction CompteurReducer() {\n  const [state, dispatch] = useReducer(reducer, {count:0});\n  return (\n    <div>\n      <p>Count: {state.count}</p>\n      <button onClick={()=>dispatch({type:'increment'})}>+</button>\n      <button onClick={()=>dispatch({type:'decrement'})}>-</button>\n    </div>\n  );\n}\n\nexport default CompteurReducer;"
+  },
+  {
+    "id": 16,
+    "titre": "Composant dynamique",
+    "description": "Afficher un composant différent selon la prop 'type' (A ou B).",
+    "codeInitial": "function Dynamic({ type }) {\n  return (\n    <div>\n      {/* condition */}\n    </div>\n  );\n}\n\nexport default Dynamic;",
+    "correction": "function Dynamic({ type }) {\n  return (\n    <div>\n      {type === 'A' ? <p>Type A</p> : <p>Type B</p>}\n    </div>\n  );\n}\n\nexport default Dynamic;"
+  },
+  {
+    "id": 17,
+    "titre": "useMemo simple",
+    "description": "Mémoriser le résultat d'un calcul lourd (somme des nombres de 1 à 1000000).",
+    "codeInitial": "import { useMemo } from 'react';\n\nfunction Somme() {\n  const total = /* useMemo */;\n  return <p>Somme: {total}</p>;\n}\n\nexport default Somme;",
+    "correction": "import { useMemo } from 'react';\n\nfunction Somme() {\n  const total = useMemo(() => {\n    let sum = 0;\n    for(let i=1;i<=1000000;i++) sum+=i;\n    return sum;\n  }, []);\n\n  return <p>Somme: {total}</p>;\n}\n\nexport default Somme;"
+  },
+  {
+    "id": 18,
+    "titre": "useCallback simple",
+    "description": "Créer un callback mémorisé qui affiche un message au clic d'un bouton.",
+    "codeInitial": "import { useCallback } from 'react';\n\nfunction Clicker() {\n  const handleClick = /* useCallback */;\n  return <button onClick={handleClick}>Cliquez</button>;\n}\n\nexport default Clicker;",
+    "correction": "import { useCallback } from 'react';\n\nfunction Clicker() {\n  const handleClick = useCallback(() => {\n    alert('Bouton cliqué');\n  }, []);\n  return <button onClick={handleClick}>Cliquez</button>;\n}\n\nexport default Clicker;"
+  },
+  {
+    "id": 19,
+    "titre": "Composant parent/enfant",
+    "description": "Passer une fonction du parent à l'enfant pour afficher un message.",
+    "codeInitial": "function Enfant({ showMessage }) {\n  return <button onClick={/* appeler showMessage */}>Message</button>;\n}\n\nexport default Enfant;",
+    "correction": "function Enfant({ showMessage }) {\n  return <button onClick={showMessage}>Message</button>;\n}\n\nexport default Enfant;"
+  },
+  {
+    "id": 20,
+    "titre": "Gestion formulaire simple",
+    "description": "Créer un formulaire avec un input 'email' et un bouton submit qui affiche la valeur.",
+    "codeInitial": "import { useState } from 'react';\n\nfunction FormEmail() {\n  const [email, setEmail] = useState('');\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    // afficher email\n  };\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type='email' value={email} onChange={/* gérer input */} />\n      <button type='submit'>Envoyer</button>\n    </form>\n  );\n}\n\nexport default FormEmail;",
+    "correction": "import { useState } from 'react';\n\nfunction FormEmail() {\n  const [email, setEmail] = useState('');\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    alert(email);\n  };\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type='email' value={email} onChange={e => setEmail(e.target.value)} />\n      <button type='submit'>Envoyer</button>\n    </form>\n  );\n}\n\nexport default FormEmail;"
+  }
+]

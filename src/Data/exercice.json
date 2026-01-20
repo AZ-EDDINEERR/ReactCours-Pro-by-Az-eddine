@@ -1,0 +1,50 @@
+[
+  {
+    "coursId": 1,
+    "titre": "JavaScript",
+    "questions": [
+      { "id": 1, "question": "Quelle méthode affiche dans la console ?", "options": ["alert()", "console.log()", "print()", "msg()"], "answer": 1 },
+      { "id": 2, "question": "Quel type stocke plusieurs valeurs ?", "options": ["String", "Number", "Array", "Boolean"], "answer": 2 },
+      { "id": 3, "question": "=== compare :", "options": ["valeur", "type", "valeur et type", "rien"], "answer": 2 },
+      { "id": 4, "question": "Comment déclarer une constante ?", "options": ["var", "let", "const", "static"], "answer": 2 },
+      { "id": 5, "question": "push() sert à :", "options": ["supprimer", "ajouter fin", "ajouter début", "trier"], "answer": 1 },
+      { "id": 6, "question": "typeof [] retourne :", "options": ["array", "object", "list", "undefined"], "answer": 1 },
+      { "id": 7, "question": "Boucle correcte :", "options": ["if", "switch", "for", "case"], "answer": 2 },
+      { "id": 8, "question": "NaN signifie :", "options": ["Not a Number", "No any Name", "New and New", "Null"], "answer": 0 },
+      { "id": 9, "question": "JSON est :", "options": ["Langage", "Format données", "Framework", "API"], "answer": 1 },
+      { "id": 10, "question": "parseInt() sert à :", "options": ["convertir en string", "convertir en number", "parser JSON", "arrondir"], "answer": 1 }
+    ]
+  },
+  {
+    "coursId": 2,
+    "titre": "ReactJS",
+    "questions": [
+      { "id": 1, "question": "Hook pour état :", "options": ["useEffect", "useState", "useRef", "useMemo"], "answer": 1 },
+      { "id": 2, "question": "Attribut obligatoire liste :", "options": ["id", "key", "index", "name"], "answer": 1 },
+      { "id": 3, "question": "JSX est :", "options": ["HTML", "JS étendu", "PHP", "CSS"], "answer": 1 },
+      { "id": 4, "question": "useEffect sert à :", "options": ["state", "effets", "routes", "styles"], "answer": 1 },
+      { "id": 5, "question": "React est :", "options": ["Framework", "Librairie", "CMS", "Serveur"], "answer": 1 },
+      { "id": 6, "question": "Props servent à :", "options": ["stocker", "passer données", "styler", "router"], "answer": 1 },
+      { "id": 7, "question": "Virtual DOM sert à :", "options": ["BDD", "optimisation", "sécurité", "design"], "answer": 1 },
+      { "id": 8, "question": "create-react-app est :", "options": ["lib", "outil", "hook", "API"], "answer": 1 },
+      { "id": 9, "question": "Fragment s’écrit :", "options": ["<div>", "<>", "<span>", "<section>"], "answer": 1 },
+      { "id": 10, "question": "Hook pour référence :", "options": ["useState", "useEffect", "useRef", "useMemo"], "answer": 2 }
+    ]
+  },
+  {
+    "coursId": 3,
+    "titre": "Web & Sécurité",
+    "questions": [
+      { "id": 1, "question": "Injection SQL est :", "options": ["attaque DB", "bug JS", "erreur CSS", "API"], "answer": 0 },
+      { "id": 2, "question": "XSS signifie :", "options": ["Cross Site Script", "Extra Secure", "XML Safe", "Cross Server"], "answer": 0 },
+      { "id": 3, "question": "HTTPS est :", "options": ["non sécurisé", "sécurisé", "local", "FTP"], "answer": 1 },
+      { "id": 4, "question": "PHP est exécuté :", "options": ["client", "serveur", "navigateur", "mobile"], "answer": 1 },
+      { "id": 5, "question": "Protection SQL :", "options": ["requêtes préparées", "alert", "console", "localStorage"], "answer": 0 },
+      { "id": 6, "question": "Firewall sert à :", "options": ["coder", "bloquer attaques", "héberger", "compiler"], "answer": 1 },
+      { "id": 7, "question": "CSRF est :", "options": ["attaque", "framework", "API", "langage"], "answer": 0 },
+      { "id": 8, "question": "Mot de passe sûr :", "options": ["1234", "password", "Az@2024!", "abcd"], "answer": 2 },
+      { "id": 9, "question": "Hash sert à :", "options": ["chiffrer", "styler", "router", "logger"], "answer": 0 },
+      { "id": 10, "question": "JWT est :", "options": ["token", "BDD", "langage", "serveur"], "answer": 0 }
+    ]
+  }
+]

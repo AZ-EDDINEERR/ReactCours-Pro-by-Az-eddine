@@ -1,70 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ExerciceInteractif from "./ExerciceInteractif";
-import axios from "axios";
+import DataEX from "../Data/exercicePratique.json";
 
 const CoursReact = () => {
-    const [data, setData] = useState([]);
-    const [exerciceActuel, setExerciceActuel] = useState(null);
-    const [index, setIndex] = useState(0);
+  const data = DataEX;
+  const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-        axios
-            .get("https://mocki.io/v1/f0a06b10-d269-40ac-8d2a-aebd8fd1d3b4")
-            .then((response) => {
-                setData(response.data);
-                // On initialise le premier exercice après le chargement
-                if (response.data.length > 0) {
-                    setExerciceActuel(response.data[0]);
-                }
-            })
-            .catch((error) => console.error("Erreur lors du chargement des exercices:", error));
-    }, []);
+  const exerciceActuel = data[index]; // initialisation automatique
 
-    if (!exerciceActuel) {
-        return <p>Chargement des exercices...</p>;
-    }
+  if (!exerciceActuel) {
+    return <p>Chargement des exercices...</p>;
+  }
 
-    return (
-        <div>
-            <h2>{exerciceActuel.titre}</h2>
-            <p>{exerciceActuel.description}</p>
+  const handlePrevious = () => {
+    if (index > 0) setIndex(index - 1);
+  };
 
-            {/* Passer le codeInitial et la correction à ton éditeur */}
-            <ExerciceInteractif
-                codeInitial={exerciceActuel.codeInitial}
-                correction={exerciceActuel.correction}
-            />
+  const handleNext = () => {
+    if (index < data.length - 1) setIndex(index + 1);
+    else alert("Les exercices sont terminés !");
+  };
 
-            <div style={{ marginTop: "20px" , display:'flex', justifyContent:'space-between' }} 
-            className="container">
-                <button
-                    onClick={() => {
-                        setIndex(Number(index) - 1)
-                        setExerciceActuel(data[index])
-                    }}
-                    className="btn btn-info m-4"
-                >
-                    {'<'} Previous 
-                </button>
+  return (
+    <div className="container my-4">
+      <h2>{exerciceActuel.titre}</h2>
+      <p>{exerciceActuel.description}</p>
 
-                <button
-                    key={index}
-                    onClick={() => {
-                        setIndex(Number(index) + 1)
-                        setExerciceActuel(data[index])
-                    }}
-                    className="btn btn-info m-4"
-                >
-                    next {'>'}
-                </button>
-            </div>
+      <ExerciceInteractif
+        codeInitial={exerciceActuel.codeInitial}
+        correction={exerciceActuel.correction}
+      />
 
-            {index > 20 ? (
-                alert('les exercice se terminé'),
-                setIndex(1)) : ''}
-        </div>
+      <div
+        style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}
+      >
+        <button
+          onClick={handlePrevious}
+          className="btn btn-info"
+          disabled={index === 0}
+        >
+          {"<"} Previous
+        </button>
 
-    );
+        <button
+          onClick={handleNext}
+          className="btn btn-info"
+          disabled={index === data.length - 1}
+        >
+          Next {">"}
+        </button>
+      </div>
+
+      <p className="text-center mt-2">
+        Exercice {index + 1} sur {data.length}
+      </p>
+    </div>
+  );
 };
 
 export default CoursReact;

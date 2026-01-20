@@ -2,9 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import CoursD from '../Data/coursD.json'
 
 export default function CoursesDetail() {
-  const [data, setData] = useState([]);
+  const data=CoursD.Data;
   const [id, setId] = useState(1);
   const [showModal, setShowModal] = useState(false);
 
@@ -18,12 +19,6 @@ export default function CoursesDetail() {
   }, [selectedId]);
 
   /* Chargement des cours */
-  useEffect(() => {
-    axios
-      .get("https://mocki.io/v1/c3b5e065-d355-4cd3-8fa9-284ec963fabc")
-      .then(res => setData(res.data.Data))
-      .catch(err => console.error(err));
-  }, []);
 
   /* Fin des cours */
   useEffect(() => {
@@ -34,8 +29,7 @@ export default function CoursesDetail() {
 
   const handleAdvanced = () => {
     setId(prev => prev + 1);
-  };
-
+  };  
   const radius = 20;
   const currentCourse = data.find(c => c.id === id);
   const progress =
